@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>制作記事 | Codexで本のHPを作ってGitHubに公開するまで</title>
+    <meta name="description" content="AI初心者向けに、CodexでKindle本の公式ミニHPを作り、GitHub Pagesに公開するまでの制作過程をまとめた記事。">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a class="brand" href="index.html"><span class="brand-mark">FI</span><span>Smart FIRE Book</span></a>
+        <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span></button>
+        <div class="nav-links">
+          <a href="index.html">ホーム</a>
+          <a href="book.html">本の内容</a>
+          <a href="author.html">著者</a>
+          <a href="bonus.html">読者特典</a>
+          <a href="build-log.html">制作記事</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="section-inner">
+          <div>
+            <p class="eyebrow">AI BEGINNER ARTICLE</p>
+            <h1>CodexでKindle本の公式HPを作り、GitHubに公開するまで。</h1>
+            <p>コードが得意ではない人でも、AIに任せる順番を間違えなければ、企画、設計、実装、公開まで進められます。</p>
+          </div>
+          <img class="mini-cover" src="assets/book-cover.jpg" alt="本の表紙">
+        </div>
+      </section>
+
+      <section class="section white">
+        <article class="section-inner content">
+          <p>今回作ったのは、Kindle本『Kindle出版始めたら6ヶ月でFIREできた私の話』の公式ミニHPです。単なるLPではなく、トップページ、本の紹介、著者紹介、読者特典、制作記事の5ページ構成にしました。</p>
+          <p>AI初心者にとって大事なのは、いきなり「おしゃれなサイトを作って」と頼まないことです。Codexには、素材を読み解く、構成を考える、実装する、確認して直す、公開する、という順番で任せると成果物が安定します。</p>
+
+          <section class="process-step">
+            <h2>1. なぜLPではなくHPにしたのか</h2>
+            <p>LPは1ページで購入に誘導するには便利です。一方で、Codexの凄さを見せるなら、複数ページのHPの方が向いています。サイト構成、ページ間の導線、共通デザイン、スマホ対応、公開準備まで、AIに任せられる範囲が広くなるからです。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>2. Codexに最初に渡した情報</h2>
+            <p>まず本のWord原稿を素材として渡し、「この本をベースにHPを作り、GitHubに公開する制作過程をAI初心者向けの記事にしたい」と伝えました。ここで、目的と読者を先に伝えるのがポイントです。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>3. 本の中身を読み解く</h2>
+            <p>Codexに原稿から章立て、中心メッセージ、読者特典、著者プロフィールを抽出してもらいました。今回の中心テーマは「完全FIREではなく、会社に依存しない選択権を持つこと」です。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>4. サイト構成を作る</h2>
+            <p>構成は、ホーム、本の内容、著者、読者特典、制作記事の5ページにしました。初心者向けの記事としても説明しやすく、完成物としても公式サイトらしく見えるバランスです。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>5. デザイン方針を決める</h2>
+            <p>本のテーマは「焦り」から「選べる余裕」への変化です。そのため、強すぎる煽りではなく、落ち着いた紙のような背景、緑、金色、白を使い、信頼感と前向きさが出る見た目にしました。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>6. 実装してもらう</h2>
+            <p>GitHub Pagesで公開しやすいように、HTML、CSS、JavaScriptだけの静的サイトにしました。ビルド作業が不要なので、初心者でもファイルをアップするだけで公開しやすくなります。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>7. スマホ表示を整える</h2>
+            <p>本の読者はスマホで見る可能性が高いので、スマホ表示を重視しました。メニューは折りたたみ式にし、ボタンやカードが小さくなりすぎないように調整しています。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>8. GitHubにアップする準備</h2>
+            <p>プロジェクトには、公開用ファイル、画像、README、GitHub Pages用の設定ファイルを入れます。余計なビルド環境を使わないことで、初めてGitHubに触る人でも構造が理解しやすくなります。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>9. GitHub Pagesで公開する</h2>
+            <p>GitHubにリポジトリを作成し、ファイルをアップロードしたら、SettingsのPagesから公開元を選びます。今回は静的サイトなので、mainブランチのルートを公開元にすれば動きます。</p>
+          </section>
+
+          <section class="process-step">
+            <h2>10. 初心者がつまずきやすい点</h2>
+            <p>よくあるつまずきは、画像パスの間違い、ファイル名の大文字小文字、GitHub Pagesの公開反映待ちです。Codexには「画面で崩れているところを直して」「GitHub Pagesで動くようにパスを確認して」と具体的に頼むと、修正が進みやすくなります。</p>
+          </section>
+
+          <h2>実際に使いやすい依頼文</h2>
+          <p>初心者の方は、次のように頼むと進めやすいです。</p>
+          <ul>
+            <li>この本の原稿を読んで、公式HPに必要なページ構成を提案してください。</li>
+            <li>GitHub Pagesで公開できる静的サイトとして作ってください。</li>
+            <li>スマホでも読みやすいデザインにしてください。</li>
+            <li>制作過程をAI初心者向けの記事として、10ステップでまとめてください。</li>
+            <li>公開前にリンク切れ、画像表示、スマホ表示を確認してください。</li>
+          </ul>
+
+          <div class="section-actions">
+            <a class="button primary" href="index.html">完成したHPを見る</a>
+            <a class="button secondary" href="https://x.gd/Wg3fs">本を読む</a>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© Smart FIRE Book</span>
+        <a href="bonus.html">読者特典へ</a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
