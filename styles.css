@@ -123,9 +123,22 @@ a {
   min-height: calc(100vh - 72px);
   padding: 72px 0 64px;
   background:
-    url("assets/book-cover.jpg") right 8% center / min(44vw, 520px) auto no-repeat,
     linear-gradient(90deg, rgba(251, 248, 242, 0.97) 0%, rgba(251, 248, 242, 0.9) 48%, rgba(251, 248, 242, 0.2) 100%),
     linear-gradient(135deg, #fbf8f2 0%, #dce9ef 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 52px;
+  right: 6%;
+  bottom: 52px;
+  z-index: 0;
+  width: min(42vw, 520px);
+  background: url("assets/book-cover.jpg") center / contain no-repeat;
+  filter: none;
+  opacity: 1;
+  pointer-events: none;
 }
 
 .hero-inner,
@@ -133,6 +146,11 @@ a {
 .footer-inner {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-copy {
@@ -487,6 +505,40 @@ h1 {
   background: rgba(173, 95, 84, 0.08);
 }
 
+.mailmag-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 8px;
+  background: var(--green-dark);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.mailmag-cta h2 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 38px);
+}
+
+.mailmag-cta p {
+  margin: 12px 0 0;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.mailmag-cta .button.primary,
+.footer-actions .button.primary {
+  color: var(--green-dark);
+  background: white;
+}
+
+.mailmag-cta .button.primary:hover,
+.footer-actions .button.primary:hover {
+  color: white;
+  background: var(--gold);
+}
+
 .site-footer {
   padding: 42px 0;
   border-top: 1px solid rgba(31, 37, 35, 0.1);
@@ -496,15 +548,34 @@ h1 {
 
 .footer-inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.footer-inner a {
+.footer-main {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-inner a:not(.button) {
   color: white;
   font-weight: 800;
   text-decoration: none;
+}
+
+.footer-inner .subtle-link {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 @media (max-width: 860px) {
@@ -543,9 +614,17 @@ h1 {
     min-height: auto;
     padding: 52px 0 42px;
     background:
-      url("assets/book-cover.jpg") center bottom 18px / min(62vw, 300px) auto no-repeat,
       linear-gradient(180deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.88) 52%, rgba(251, 248, 242, 0.2) 100%),
       linear-gradient(135deg, #fbf8f2 0%, #dce9ef 100%);
+  }
+
+  .hero::after {
+    top: auto;
+    right: 50%;
+    bottom: 130px;
+    width: min(62vw, 300px);
+    height: min(82vw, 480px);
+    transform: translateX(50%);
   }
 
   .hero-copy {
@@ -577,6 +656,11 @@ h1 {
 
   .section {
     padding: 62px 0;
+  }
+
+  .mailmag-cta {
+    grid-template-columns: 1fr;
+    padding: 26px;
   }
 
   .mini-cover {
