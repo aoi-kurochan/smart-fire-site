@@ -10,7 +10,6 @@ Kindle本『Kindle出版始めたら6ヶ月でFIREできた私の話』の公式
 - `book.html`: 本の内容
 - `author.html`: 著者プロフィール
 - `bonus.html`: 読者特典
-- `build-log.html`: CodexでHPを作りGitHubに公開するまでの記事
 
 ## GitHub Pagesで公開する手順
 

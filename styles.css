@@ -123,8 +123,8 @@ a {
   min-height: calc(100vh - 72px);
   padding: 72px 0 64px;
   background:
-    linear-gradient(90deg, rgba(251, 248, 242, 0.97) 0%, rgba(251, 248, 242, 0.9) 48%, rgba(251, 248, 242, 0.2) 100%),
     url("assets/book-cover.jpg") right 8% center / min(44vw, 520px) auto no-repeat,
+    linear-gradient(90deg, rgba(251, 248, 242, 0.97) 0%, rgba(251, 248, 242, 0.9) 48%, rgba(251, 248, 242, 0.2) 100%),
     linear-gradient(135deg, #fbf8f2 0%, #dce9ef 100%);
 }
 
@@ -543,8 +543,8 @@ h1 {
     min-height: auto;
     padding: 52px 0 42px;
     background:
-      linear-gradient(180deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.88) 52%, rgba(251, 248, 242, 0.2) 100%),
       url("assets/book-cover.jpg") center bottom 18px / min(62vw, 300px) auto no-repeat,
+      linear-gradient(180deg, rgba(251, 248, 242, 0.98) 0%, rgba(251, 248, 242, 0.88) 52%, rgba(251, 248, 242, 0.2) 100%),
       linear-gradient(135deg, #fbf8f2 0%, #dce9ef 100%);
   }
 
