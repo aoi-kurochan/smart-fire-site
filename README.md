@@ -2,6 +2,8 @@
 
 Kindle本『Kindle出版始めたら6ヶ月でFIREできた私の話』の公式ミニHPです。
 
+公開URL: https://aoi-kurochan.github.io/smart-fire-site/
+
 ## ページ構成
 
 - `index.html`: ホーム
@@ -12,12 +14,9 @@ Kindle本『Kindle出版始めたら6ヶ月でFIREできた私の話』の公式
 
 ## GitHub Pagesで公開する手順
 
-1. GitHubで新しいリポジトリを作る
-2. このフォルダの中身をリポジトリへアップロードする
-3. GitHubの `Settings` から `Pages` を開く
-4. `Build and deployment` の `Source` で `Deploy from a branch` を選ぶ
-5. `Branch` を `main`、フォルダを `/root` にして保存する
-6. 数分後に表示されるURLへアクセスする
+このリポジトリでは、`gh-pages` ブランチのルートをGitHub Pagesの公開元にしています。
+
+今後更新する場合は、`main` を更新したあとに `gh-pages` へ反映してください。
 
 ## ローカル確認
 
