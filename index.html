@@ -16,6 +16,8 @@
         --line-blue: #d9e1e8;
         --navy: #34465f;
         --navy-deep: #24344a;
+        --accent: #7c8da4;
+        --accent-warm: #c9bda9;
         --ink-soft: #3d4652;
         --card: rgba(255, 255, 255, 0.82);
         --shadow: 0 18px 46px rgba(52, 70, 95, 0.08);
@@ -113,6 +115,15 @@
         padding-top: 34px;
       }
 
+      .section-label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent);
+        font-size: 0.76rem;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
       .button-wrap {
         margin-top: 24px;
       }
@@ -146,6 +157,8 @@
       }
 
       .benefits-box {
+        position: relative;
+        overflow: hidden;
         border: 1px solid #d8d0c4;
         border-radius: 8px;
         background:
@@ -153,6 +166,16 @@
           var(--bg-soft);
         box-shadow: var(--shadow);
         padding: 28px 20px;
+      }
+
+      .benefits-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-warm));
       }
 
       .benefit-grid {
@@ -170,23 +193,48 @@
       }
 
       .benefit-card {
-        padding: 20px 18px;
+        position: relative;
+        overflow: hidden;
+        padding: 22px 18px 20px;
+      }
+
+      .benefit-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #d9e1e8;
+      }
+
+      .benefit-meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
       }
 
       .benefit-number {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 30px;
-        height: 30px;
-        margin-bottom: 12px;
+        min-width: 32px;
+        height: 28px;
         border: 1px solid #cfd9e3;
         border-radius: 999px;
         background: rgba(255, 255, 255, 0.72);
         color: #60738d;
-        font-size: 0.82rem;
+        font-size: 0.76rem;
         font-weight: 700;
         line-height: 1;
+      }
+
+      .benefit-kind {
+        color: #6d7f96;
+        font-size: 0.76rem;
+        font-weight: 700;
+        line-height: 1.4;
       }
 
       .benefit-card p {
@@ -212,10 +260,37 @@
       }
 
       .signup-box {
+        position: relative;
+        overflow: hidden;
         border: 1px solid var(--line-blue);
         border-radius: 8px;
-        background: linear-gradient(180deg, rgba(238, 243, 247, 0.74), rgba(255, 255, 255, 0.74));
+        background:
+          linear-gradient(180deg, rgba(238, 243, 247, 0.92), rgba(255, 255, 255, 0.78)),
+          #f4f7f9;
         padding: 26px 20px;
+      }
+
+      .signup-box::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--navy);
+      }
+
+      .signup-box .button {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: #fff;
+        box-shadow: 0 14px 30px rgba(36, 52, 74, 0.14);
+      }
+
+      .signup-box .button:hover,
+      .signup-box .button:focus-visible {
+        background: var(--navy-deep);
+        border-color: var(--navy-deep);
       }
 
       .notes {
@@ -302,6 +377,7 @@
 
       <section class="section" aria-labelledby="for-readers">
         <div class="section-inner">
+          <span class="section-label">FOR READERS</span>
           <h2 id="for-readers">本を読んでくださった方へ</h2>
           <p>このページに来てくださった方は、きっとどこかで「このままでいいのだろうか」と感じているのだと思います。</p>
           <p>会社を辞めたい。<br>でも、今すぐ辞めるのは怖い。</p>
@@ -313,6 +389,7 @@
 
       <section id="benefits" class="section benefits" aria-labelledby="benefits-title">
         <div class="benefits-box">
+          <span class="section-label">BENEFITS</span>
           <h2 id="benefits-title">登録後に受け取れるもの</h2>
           <p>スマートFIREの考え方を、読み終わって終わりにせず、実践に移しやすくするために、登録者向けの資料と診断をご用意しています。</p>
           <p>登録後の最初のメールでは、「スマートFIREタイプ診断」もお送りします。</p>
@@ -320,25 +397,37 @@
 
           <div class="benefit-grid">
             <article class="benefit-card">
-              <span class="benefit-number">1</span>
+              <div class="benefit-meta">
+                <span class="benefit-number">01</span>
+                <span class="benefit-kind">DIAGNOSIS</span>
+              </div>
               <h3>スマートFIREタイプ診断</h3>
               <p>8つの質問に答えるだけで、今の自分が最初に整えるべきテーマを整理できます。AI副業、Kindle出版、家計と資産運用、会社との距離感を見ながら、次の一歩を考えるための診断です。</p>
             </article>
 
             <article class="benefit-card">
-              <span class="benefit-number">2</span>
+              <div class="benefit-meta">
+                <span class="benefit-number">02</span>
+                <span class="benefit-kind">METHOD</span>
+              </div>
               <h3>0から10万円を目指す収入づくりの方法</h3>
               <p>会社員の安定を残しながら、副業収入を少しずつ作っていくための考え方と進め方をまとめた資料です。</p>
             </article>
 
             <article class="benefit-card">
-              <span class="benefit-number">3</span>
+              <div class="benefit-meta">
+                <span class="benefit-number">03</span>
+                <span class="benefit-kind">PROMPTS</span>
+              </div>
               <h3>AI執筆を速める初期設定プロンプト</h3>
               <p>記事やKindle原稿を作るときに、リサーチ、構成、下書き、推敲を進めやすくするためのプロンプトです。</p>
             </article>
 
             <article class="benefit-card">
-              <span class="benefit-number">4</span>
+              <div class="benefit-meta">
+                <span class="benefit-number">04</span>
+                <span class="benefit-kind">SWAP LIST</span>
+              </div>
               <h3>高スワップ通貨の比較リスト5選</h3>
               <p>スワップ運用で候補になりやすい通貨を、特徴や注意点とあわせて比較できるようにまとめた資料です。</p>
             </article>
@@ -349,6 +438,7 @@
 
       <section class="section" aria-labelledby="about-smart-fire">
         <div class="section-inner">
+          <span class="section-label">SMART FIRE</span>
           <h2 id="about-smart-fire">スマートFIREとは</h2>
           <p>スマートFIREは、会社員の安定を活かしながら、自分の収入源と選択肢を増やしていく考え方です。</p>
           <p>いきなり会社を辞めるのではなく、会社にいる間に準備を進めます。</p>
@@ -359,6 +449,7 @@
 
       <section class="section" aria-labelledby="three-pillars">
         <div class="section-inner">
+          <span class="section-label">THREE PILLARS</span>
           <h2 id="three-pillars">3つの柱</h2>
           <div class="pillars">
             <article class="pillar">
@@ -384,6 +475,7 @@
 
       <section id="signup" class="section" aria-labelledby="signup-title">
         <div class="signup-box">
+          <span class="section-label">NEXT STEP</span>
           <h2 id="signup-title">診断結果に合わせて、次の一歩を進めたい方へ</h2>
           <p>スマートFIREの実践に役立つ資料や、最新の取り組みは、無料メールでもお届けしています。</p>
           <p>登録後の最初のメールでは、「スマートFIREタイプ診断」もお送りします。</p>
