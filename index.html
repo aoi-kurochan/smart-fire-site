@@ -1,499 +1,197 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>あおいのスマートFIRE読者ページ</title>
-    <meta name="description" content="会社員の安定を活かしながら、AI副業、Kindle出版、資産運用を少しずつ積み上げるスマートFIREの読者ページです。">
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #fbfaf7;
-        --bg-soft: #f5f1ea;
-        --text: #202733;
-        --muted: #616b78;
-        --line: #dfd8cc;
-        --line-blue: #d9e1e8;
-        --navy: #34465f;
-        --navy-deep: #24344a;
-        --accent: #7c8da4;
-        --accent-warm: #c9bda9;
-        --ink-soft: #3d4652;
-        --card: rgba(255, 255, 255, 0.82);
-        --shadow: 0 18px 46px rgba(52, 70, 95, 0.08);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        background: var(--bg);
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(251, 250, 247, 0) 340px),
-          var(--bg);
-        color: var(--text);
-        font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif;
-        font-size: 16px;
-        line-height: 1.9;
-        letter-spacing: 0;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .page {
-        width: min(100%, 720px);
-        margin: 0 auto;
-        padding: 32px 20px 28px;
-      }
-
-      .hero {
-        padding: 34px 0 30px;
-      }
-
-      h1,
-      h2,
-      h3,
-      p,
-      li {
-        overflow-wrap: anywhere;
-      }
-
-      h1 {
-        margin: 0;
-        color: #18202a;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.34;
-      }
-
-      h2 {
-        margin: 0 0 18px;
-        color: #202833;
-        font-size: 1.42rem;
-        font-weight: 700;
-        line-height: 1.55;
-      }
-
-      h3 {
-        margin: 0 0 12px;
-        color: #243044;
-        font-size: 1.04rem;
-        font-weight: 700;
-        line-height: 1.55;
-      }
-
-      p {
-        margin: 0;
-      }
-
-      p + p {
-        margin-top: 16px;
-      }
-
-      .lead {
-        margin: 24px 0 0;
-        color: #343b45;
-        font-size: 1.02rem;
-        line-height: 2;
-      }
-
-      .section {
-        padding: 34px 0;
-        scroll-margin-top: 24px;
-      }
-
-      .section-inner {
-        border-top: 1px solid var(--line);
-        padding-top: 34px;
-      }
-
-      .section-label {
-        display: block;
-        margin-bottom: 8px;
-        color: var(--accent);
-        font-size: 0.76rem;
-        font-weight: 700;
-        line-height: 1.4;
-      }
-
-      .button-wrap {
-        margin-top: 24px;
-      }
-
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        min-height: 52px;
-        border: 1px solid #9aa8b8;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.88);
-        color: var(--navy);
-        font-weight: 700;
-        line-height: 1.45;
-        text-align: center;
-        text-decoration: none;
-        transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
-      }
-
-      .button:hover,
-      .button:focus-visible {
-        background: #eef3f7;
-        border-color: #708198;
-        transform: translateY(-1px);
-      }
-
-      .benefits {
-        margin-top: 4px;
-      }
-
-      .benefits-box {
-        position: relative;
-        overflow: hidden;
-        border: 1px solid #d8d0c4;
-        border-radius: 8px;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(246, 242, 235, 0.82)),
-          var(--bg-soft);
-        box-shadow: var(--shadow);
-        padding: 28px 20px;
-      }
-
-      .benefits-box::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-warm));
-      }
-
-      .benefit-grid {
-        display: grid;
-        gap: 14px;
-        margin-top: 24px;
-      }
-
-      .benefit-card,
-      .pillar {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--card);
-        box-shadow: var(--shadow);
-      }
-
-      .benefit-card {
-        position: relative;
-        overflow: hidden;
-        padding: 22px 18px 20px;
-      }
-
-      .benefit-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: #d9e1e8;
-      }
-
-      .benefit-meta {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 14px;
-      }
-
-      .benefit-number {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 32px;
-        height: 28px;
-        border: 1px solid #cfd9e3;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.72);
-        color: #60738d;
-        font-size: 0.76rem;
-        font-weight: 700;
-        line-height: 1;
-      }
-
-      .benefit-kind {
-        color: #6d7f96;
-        font-size: 0.76rem;
-        font-weight: 700;
-        line-height: 1.4;
-      }
-
-      .benefit-card p {
-        color: var(--ink-soft);
-        font-size: 0.95rem;
-        line-height: 1.78;
-      }
-
-      .pillars {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 14px;
-        margin-top: 22px;
-      }
-
-      .pillar {
-        padding: 22px 20px;
-      }
-
-      .pillar p {
-        color: var(--ink-soft);
-        font-size: 0.98rem;
-      }
-
-      .signup-box {
-        position: relative;
-        overflow: hidden;
-        border: 1px solid var(--line-blue);
-        border-radius: 8px;
-        background:
-          linear-gradient(180deg, rgba(238, 243, 247, 0.92), rgba(255, 255, 255, 0.78)),
-          #f4f7f9;
-        padding: 26px 20px;
-      }
-
-      .signup-box::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: var(--navy);
-      }
-
-      .signup-box .button {
-        background: var(--navy);
-        border-color: var(--navy);
-        color: #fff;
-        box-shadow: 0 14px 30px rgba(36, 52, 74, 0.14);
-      }
-
-      .signup-box .button:hover,
-      .signup-box .button:focus-visible {
-        background: var(--navy-deep);
-        border-color: var(--navy-deep);
-      }
-
-      .notes {
-        margin-top: 18px;
-        color: var(--muted);
-        font-size: 0.84rem;
-        line-height: 1.8;
-      }
-
-      .footer {
-        border-top: 1px solid var(--line);
-        padding: 26px 0 4px;
-        color: #74706a;
-        font-size: 0.82rem;
-        text-align: center;
-      }
-
-      @media (min-width: 680px) {
-        body {
-          font-size: 17px;
-        }
-
-        .page {
-          padding: 54px 30px 38px;
-        }
-
-        .hero {
-          padding: 48px 0 42px;
-        }
-
-        h1 {
-          font-size: 3.05rem;
-        }
-
-        .section {
-          padding: 44px 0;
-        }
-
-        .section-inner {
-          padding-top: 44px;
-        }
-
-        .benefits-box {
-          padding: 34px 30px;
-        }
-
-        .benefit-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 16px;
-        }
-
-        .pillars {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 16px;
-        }
-
-        .pillar {
-          padding: 24px 18px;
-        }
-
-        .signup-box {
-          padding: 30px 30px;
-        }
-
-        .button {
-          width: auto;
-          min-width: 300px;
-          padding: 0 24px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <main class="page">
-      <section class="hero" aria-labelledby="page-title">
-        <h1 id="page-title">あおいのスマートFIRE読者ページ</h1>
-        <div class="lead">
-          <p>会社を辞めたい。<br>でも、今すぐ辞めるのは怖い。</p>
-          <p>そう感じている方に向けて、会社に依存しない選択肢を作るための読者ページを用意しました。</p>
-          <p>ここでは、AI副業、Kindle出版、資産運用を少しずつ積み上げながら、焦らず現実的に自由度を高めていくための考え方と、実践に使える資料をまとめています。</p>
-          <p>「いきなり辞める」のではなく、「辞めても困らない準備」を始めたい方に向けたページです。</p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="for-readers">
-        <div class="section-inner">
-          <span class="section-label">FOR READERS</span>
-          <h2 id="for-readers">本を読んでくださった方へ</h2>
-          <p>このページに来てくださった方は、きっとどこかで「このままでいいのだろうか」と感じているのだと思います。</p>
-          <p>会社を辞めたい。<br>でも、今すぐ辞めるのは怖い。</p>
-          <p>その気持ちは、無理に否定しなくて大丈夫です。</p>
-          <p>大切なのは、勢いで会社を辞めることではありません。</p>
-          <p>会社に依存しない選択肢を、少しずつ育てていくことです。</p>
-        </div>
-      </section>
-
-      <section id="benefits" class="section benefits" aria-labelledby="benefits-title">
-        <div class="benefits-box">
-          <span class="section-label">BENEFITS</span>
-          <h2 id="benefits-title">登録後に受け取れるもの</h2>
-          <p>スマートFIREの考え方を、読み終わって終わりにせず、実践に移しやすくするために、登録者向けの資料と診断をご用意しています。</p>
-          <p>登録後の最初のメールでは、「スマートFIREタイプ診断」もお送りします。</p>
-          <p>そのうえで、実践に使える3つの資料もご覧いただけます。</p>
-
-          <div class="benefit-grid">
-            <article class="benefit-card">
-              <div class="benefit-meta">
-                <span class="benefit-number">01</span>
-                <span class="benefit-kind">DIAGNOSIS</span>
-              </div>
-              <h3>スマートFIREタイプ診断</h3>
-              <p>8つの質問に答えるだけで、今の自分が最初に整えるべきテーマを整理できます。AI副業、Kindle出版、家計と資産運用、会社との距離感を見ながら、次の一歩を考えるための診断です。</p>
-            </article>
-
-            <article class="benefit-card">
-              <div class="benefit-meta">
-                <span class="benefit-number">02</span>
-                <span class="benefit-kind">METHOD</span>
-              </div>
-              <h3>0から10万円を目指す収入づくりの方法</h3>
-              <p>会社員の安定を残しながら、副業収入を少しずつ作っていくための考え方と進め方をまとめた資料です。</p>
-            </article>
-
-            <article class="benefit-card">
-              <div class="benefit-meta">
-                <span class="benefit-number">03</span>
-                <span class="benefit-kind">PROMPTS</span>
-              </div>
-              <h3>AI執筆を速める初期設定プロンプト</h3>
-              <p>記事やKindle原稿を作るときに、リサーチ、構成、下書き、推敲を進めやすくするためのプロンプトです。</p>
-            </article>
-
-            <article class="benefit-card">
-              <div class="benefit-meta">
-                <span class="benefit-number">04</span>
-                <span class="benefit-kind">SWAP LIST</span>
-              </div>
-              <h3>高スワップ通貨の比較リスト5選</h3>
-              <p>スワップ運用で候補になりやすい通貨を、特徴や注意点とあわせて比較できるようにまとめた資料です。</p>
-            </article>
-          </div>
-
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="about-smart-fire">
-        <div class="section-inner">
-          <span class="section-label">SMART FIRE</span>
-          <h2 id="about-smart-fire">スマートFIREとは</h2>
-          <p>スマートFIREは、会社員の安定を活かしながら、自分の収入源と選択肢を増やしていく考え方です。</p>
-          <p>いきなり会社を辞めるのではなく、会社にいる間に準備を進めます。</p>
-          <p>AI副業で小さな収入を作る。<br>Kindle出版で資産になるコンテンツを積み上げる。<br>資産運用で将来の不安を少しずつ減らす。</p>
-          <p>この3つをあわてずに組み合わせていくことで、「会社にいるしかない」という状態から抜け出していきます。</p>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="three-pillars">
-        <div class="section-inner">
-          <span class="section-label">THREE PILLARS</span>
-          <h2 id="three-pillars">3つの柱</h2>
-          <div class="pillars">
-            <article class="pillar">
-              <h3>AI副業</h3>
-              <p>AIを使って、文章作成、リサーチ、コンテンツ制作の速度を上げていきます。</p>
-              <p>大きな才能や特別な経験がなくても、小さく試しながら収入の芽を作れるのが魅力です。</p>
-            </article>
-
-            <article class="pillar">
-              <h3>Kindle出版</h3>
-              <p>自分の経験や学びを、読者の役に立つ形でまとめていきます。</p>
-              <p>一度出した本が、あとからも読まれ続ける可能性があるため、積み上げ型の副業として相性が良いです。</p>
-            </article>
-
-            <article class="pillar">
-              <h3>資産運用</h3>
-              <p>副業で得たお金や毎月の余剰資金を、将来の安心につなげていきます。</p>
-              <p>無理に大きく増やすのではなく、リスクを理解しながら、長く続けられる形を整えていきます。</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="signup" class="section" aria-labelledby="signup-title">
-        <div class="signup-box">
-          <span class="section-label">NEXT STEP</span>
-          <h2 id="signup-title">診断結果に合わせて、次の一歩を進めたい方へ</h2>
-          <p>スマートFIREの実践に役立つ資料や、最新の取り組みは、無料メールでもお届けしています。</p>
-          <p>登録後の最初のメールでは、「スマートFIREタイプ診断」もお送りします。</p>
-          <p>「自分も少しずつ準備を始めたい」と感じた方は、下のボタンから実践資料を受け取ってください。</p>
-          <p>会社に依存しない選択肢は、一気に作るものではありません。</p>
-          <p>今日できる小さな一歩から、少しずつ整えていきましょう。</p>
-
-          <div class="button-wrap">
-            <a class="button" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">スマートFIRE実践資料を受け取る</a>
-          </div>
-
-          <p class="notes">入力いただいたメールアドレスは、スマートFIREに関する情報提供のために使用します。<br>不要になった場合は、いつでも配信停止できます。<br>資産運用に関する内容は、特定の投資判断や成果を保証するものではありません。<br>登録後のメールが見つからない場合は、迷惑メールフォルダやプロモーションフォルダも確認してみてください。</p>
-        </div>
-      </section>
-
-      <footer class="footer">
-        <p>© あおいのスマートFIRE</p>
-      </footer>
-    </main>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スマートFIRE読者限定特典｜あおいの Smart FIRE 日記</title>
+<meta name="description" content="本を読んでくださった方への読者限定特典ページです。スマートFIREタイプ診断と、3つの実践資料を無料でお受け取りいただけます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="スマートFIRE読者限定特典｜あおいの Smart FIRE 日記">
+<meta property="og:description" content="本を読んでくださった方への読者限定特典ページです。スマートFIREタイプ診断と、3つの実践資料を無料でお受け取りいただけます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8f3;
+  --card:#ffffff;
+  --ink:#37403a;
+  --ink-soft:#6a736c;
+  --ink-faint:#98a09a;
+  --green:#2e7d55;        /* アクセント（深緑） */
+  --green-d:#276a49;      /* hover */
+  --green-soft:#8fb98c;
+  --gold:#a8842c;         /* 特典② */
+  --leaf-green:#5c8a5a;   /* 特典① */
+  --blue:#3f6aa0;         /* 特典③ */
+  --line:#e6e9e2;
+  --shadow:0 6px 24px rgba(46,125,85,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--ink);
+  line-height:1.9;font-size:16px;letter-spacing:.01em;overflow-x:hidden;}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+section{padding:52px 0;}
+
+/* eyebrow */
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--green);}
+.eyebrow-jp{font-size:13px;color:var(--ink-soft);margin-top:6px;}
+
+/* 見出し */
+h2.sec{font-size:23px;font-weight:700;color:var(--ink);line-height:1.55;
+  padding-bottom:12px;margin-bottom:26px;position:relative;text-wrap:balance;}
+h2.sec::after{content:"";position:absolute;left:0;bottom:0;width:52px;height:3px;
+  background:var(--green);border-radius:2px;}
+
+p{margin-bottom:14px;}
+p:last-child{margin-bottom:0;}
+.soft{color:var(--ink-soft);}
+.small{font-size:13.5px;color:var(--ink-soft);line-height:1.85;}
+
+/* ===== CTAボタン ===== */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  background:var(--green);color:#fff;font-weight:700;font-size:17px;
+  text-decoration:none;padding:18px 34px;border-radius:44px;
+  box-shadow:0 8px 20px rgba(46,125,85,.28);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+  text-wrap:balance;text-align:center;}
+.cta:hover{background:var(--green-d);transform:translateY(-2px);box-shadow:0 12px 26px rgba(46,125,85,.34);}
+.cta .arw{font-weight:400;}
+.cta-note{margin-top:12px;}
+
+/* ===== ファーストビュー ===== */
+.hero{position:relative;padding:64px 0 54px;text-align:center;overflow:hidden;}
+.hero .wrap{position:relative;z-index:1;}
+.hero .eyebrow-jp{margin-bottom:22px;}
+.hero h1{font-weight:700;color:var(--ink);letter-spacing:.02em;
+  font-size:clamp(30px,7.4vw,46px);line-height:1.4;text-wrap:balance;margin-bottom:22px;}
+.hero h1 .l1{color:var(--green);}
+.hero .lead{font-size:clamp(16px,4.2vw,19px);font-weight:500;max-width:600px;margin:0 auto 12px;text-wrap:balance;}
+.hero .sub{font-size:15px;color:var(--ink-soft);max-width:560px;margin:0 auto 30px;text-wrap:balance;}
+.hero .cta-note .small{margin:0;}
+.leaf{position:absolute;opacity:.5;pointer-events:none;z-index:0;}
+.leaf.a{top:-28px;right:-26px;width:150px;height:150px;transform:rotate(24deg);}
+.leaf.b{bottom:-40px;left:-34px;width:130px;height:130px;transform:rotate(205deg);}
+
+/* ===== 読者への一言 ===== */
+.note-block{background:var(--card);border-radius:16px;box-shadow:var(--shadow);
+  padding:30px 30px;border-left:4px solid var(--green-soft);}
+.note-block p{margin-bottom:10px;}
+.note-block p:last-child{margin-bottom:0;}
+.note-block .strong{color:var(--ink);font-weight:500;}
+
+/* ===== 特典カード ===== */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:34px;}
+.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);
+  padding:26px 24px 24px;border-top:4px solid var(--c,var(--green));position:relative;}
+.card .badge{display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;background:var(--c,var(--green));color:#fff;
+  font-weight:700;font-size:14px;vertical-align:middle;}
+.card .label{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--c,var(--green));
+  margin-left:10px;vertical-align:middle;}
+.card .cap{display:block;margin-bottom:14px;}
+.card h3{font-size:17px;font-weight:700;line-height:1.55;margin-bottom:10px;color:var(--ink);}
+.card p{font-size:14px;color:var(--ink-soft);line-height:1.85;margin:0;}
+.card.c01{--c:var(--green);}
+.card.c02{--c:var(--gold);}
+.card.c03{--c:var(--leaf-green);}
+.card.c04{--c:var(--blue);}
+
+/* ===== 最終CTA ===== */
+.final{text-align:center;}
+.final .safe{margin-top:26px;text-align:left;max-width:600px;margin-left:auto;margin-right:auto;}
+.final .safe p{margin-bottom:8px;}
+
+/* ===== フッター ===== */
+footer{text-align:center;padding:34px 22px 46px;color:var(--ink-faint);font-size:13px;
+  border-top:1px solid var(--line);margin-top:10px;}
+
+/* ===== レスポンシブ ===== */
+@media (max-width:640px){
+  section{padding:42px 0;}
+  .cards{grid-template-columns:1fr;gap:14px;}
+  .cta{width:100%;padding:18px 20px;font-size:16px;}
+  .note-block{padding:22px 20px;}
+  h2.sec{font-size:20px;}
+  .hero{padding:48px 0 44px;}
+}
+</style>
+</head>
+<body>
+
+<!-- セクション1：ファーストビュー -->
+<header class="hero">
+  <svg class="leaf a" viewBox="0 0 100 100" aria-hidden="true"><path fill="#d7e6d3" d="M50 8 C30 24 24 52 40 78 C42 55 47 34 62 18 C56 32 52 52 52 78 C70 54 70 26 50 8Z"/></svg>
+  <svg class="leaf b" viewBox="0 0 100 100" aria-hidden="true"><path fill="#e0ecdc" d="M50 8 C30 24 24 52 40 78 C42 55 47 34 62 18 C56 32 52 52 52 78 C70 54 70 26 50 8Z"/></svg>
+  <div class="wrap">
+    <div class="eyebrow">FOR READERS</div>
+    <div class="eyebrow-jp">本を読んでくださった方へ</div>
+    <h1><span class="l1">スマートFIRE</span> 読者限定特典</h1>
+    <p class="lead">会社を辞めずに、会社に縛られない人生を作る。そのための読者限定特典を、4つご用意しました。</p>
+    <p class="sub">10秒のメール登録で、スマートFIREタイプ診断と、3つの実践資料をお受け取りいただけます。</p>
+    <a id="cta-hero" class="cta" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で読者限定特典を受け取る <span class="arw">→</span></a>
+    <div class="cta-note">
+      <p class="small">登録は無料です。メールアドレスだけでOK。<br>不要になれば、いつでも解除できます。</p>
+    </div>
+  </div>
+</header>
+
+<!-- セクション2：読者への一言 -->
+<section>
+  <div class="wrap">
+    <div class="note-block">
+      <p class="strong">会社を辞めたい。でも、いきなり辞めるのは怖い。</p>
+      <p>その気持ちは、無理に否定しなくて大丈夫です。</p>
+      <p>大切なのは、勢いで辞めることではなく、会社にいる間に、選択肢を少しずつ育てていくこと。</p>
+      <p>このページの特典は、その最初の一歩を軽くするために作りました。</p>
+    </div>
+  </div>
+</section>
+
+<!-- セクション3：特典カード -->
+<section>
+  <div class="wrap">
+    <h2 class="sec">10秒の登録で受け取れる、4つの読者特典</h2>
+    <div class="cards">
+      <div class="card c01">
+        <span class="cap"><span class="badge">01</span><span class="label">DIAGNOSIS</span></span>
+        <h3>スマートFIREタイプ診断</h3>
+        <p>8つの質問に答えるだけで、AI副業、Kindle出版、家計と資産運用、会社との距離感のうち、いまの自分が最初に整えるべきテーマがわかります。</p>
+      </div>
+      <div class="card c02">
+        <span class="cap"><span class="badge">02</span><span class="label">CHECK</span></span>
+        <h3>人事を10年やってわかった、会社員の副業リスク点検シート</h3>
+        <p>「会社に知られたらどうしよう」という不安を、見つける側にいた人事の視点で、10個の点検項目に整理しました。</p>
+      </div>
+      <div class="card c03">
+        <span class="cap"><span class="badge">03</span><span class="label">METHOD</span></span>
+        <h3>0から10万円を目指す、最初の元手づくりガイド</h3>
+        <p>会社員のまま、最初の元手を作るために知っておきたい考え方と注意点をまとめました。</p>
+      </div>
+      <div class="card c04">
+        <span class="cap"><span class="badge">04</span><span class="label">MONEY</span></span>
+        <h3>毎日増えるように見えるお金の正体</h3>
+        <p>スワップポイントのしくみと、始める前に知っておきたい落とし穴をまとめました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 最終CTAと安心文言 -->
+<section class="final">
+  <div class="wrap">
+    <a id="cta-bottom" class="cta" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で読者限定特典を受け取る <span class="arw">→</span></a>
+    <div class="safe">
+      <p class="small">登録は無料です。登録後、診断と3つの資料を順番にお届けします。</p>
+      <p class="small">入力いただいたメールアドレスは、スマートFIREに関する情報提供のために使用します。</p>
+      <p class="small">不要になった場合は、いつでも配信停止できます。</p>
+      <p class="small">メールが見つからない場合は、迷惑メールフォルダやプロモーションフォルダもご確認ください。</p>
+    </div>
+  </div>
+</section>
+
+<footer>© あおいの Smart FIRE 日記</footer>
+
+</body>
 </html>
