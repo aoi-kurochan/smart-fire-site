@@ -2,7 +2,7 @@
 
 Kindle本『Kindle出版始めたら6ヶ月でFIREできた私の話』の公式ミニHPです。
 
-公開URL: https://aoi-kurochan.github.io/smart-fire-site/
+公開URL: https://bonus.aoi-kurokawa.com/
 
 ## ページ構成
 
