@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <title>スマートFIRE 特典セット</title>
 <meta name="description" content="会社に頼らない生き方に興味がある方へ、スマートFIREの特典をお渡しするページです。">
 <meta property="og:type" content="website">
@@ -27,21 +27,6 @@
   --rule:#d6dcd8;
   --band:#203b43;
   --band-ink:#ffffff;
-}
-@media (prefers-color-scheme:dark){
-  :root{
-    --ink:#e4ece9;
-    --ink-soft:#b3c1bd;
-    --ink-faint:#83928e;
-    --paper:#131a1c;
-    --white:#1a2326;
-    --mint:#1f2f2b;
-    --peach:#2c2420;
-    --red:#e8664f;
-    --rule:#2f3c3e;
-    --band:#0d1416;
-    --band-ink:#e4ece9;
-  }
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;}
@@ -78,7 +63,6 @@ h2{font-size:clamp(23px,5.4vw,30px);font-weight:800;line-height:1.6;letter-spaci
 .btn:hover{opacity:.85;}
 .btn .arw{font-weight:400;}
 .btn.light{background:var(--band-ink);color:var(--band);}
-@media (prefers-color-scheme:dark){.btn{color:#131a1c;}}
 
 /* ファーストビュー */
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:440px;}
@@ -107,7 +91,6 @@ h2{font-size:clamp(23px,5.4vw,30px);font-weight:800;line-height:1.6;letter-spaci
 .hero-visual>.booklets{position:relative;z-index:2;}
 .hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.35;filter:saturate(.45);
   -webkit-mask-image:linear-gradient(to left,#000 30%,transparent 95%);mask-image:linear-gradient(to left,#000 30%,transparent 95%);}
-@media (prefers-color-scheme:dark){.hero-photo{opacity:.12;}}
 
 /* 書いている人 */
 .about{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start;}
@@ -182,7 +165,6 @@ footer .fine{font-size:12px;color:var(--ink-faint);line-height:1.8;}
 .sticky{position:fixed;left:16px;right:16px;bottom:14px;z-index:20;display:none;justify-content:center;
   background:var(--ink);color:var(--white);text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.06em;
   padding:14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .35s;}
-@media (prefers-color-scheme:dark){.sticky{color:#131a1c;}}
 .sticky.show{opacity:1;pointer-events:auto;}
 
 
@@ -246,7 +228,7 @@ footer .fine{font-size:12px;color:var(--ink-faint);line-height:1.8;}
         <div class="bk b4"><div class="row"><span class="n">04</span><span class="t">毎日お金が増える仕組みの正体</span></div></div>
         <div class="bk b3"><div class="row"><span class="n">03</span><span class="t">0から10万円を作る、<br>最初の元手づくりガイド</span></div></div>
         <div class="bk b2"><div class="row"><span class="n">02</span><span class="t">人事を10年やってわかった、<br>会社員の副業リスク点検シート</span></div></div>
-        <div class="bk b1"><span class="tag">登録後すぐ</span><div class="row"><span class="n">01</span></div><div class="t" style="margin-top:6px">スマートFIRE<br>タイプ診断</div><p class="lead">8つの質問に答えると、<br>あなた向けのレポートが読めます。</p></div>
+        <div class="bk b1"><span class="tag">登録後すぐ</span><div class="row"><span class="n">01</span></div><div class="t" style="margin-top:6px">会社員の副業・<br>お金タイプ診断</div><p class="lead">8つの質問に答えると、<br>あなた向けのレポートが読めます。</p></div>
       </div>
     </div>
   </div>
@@ -288,7 +270,7 @@ footer .fine{font-size:12px;color:var(--ink-faint);line-height:1.8;}
       <div class="card">
         <div>
           <span class="tag">登録後すぐ</span><span class="no">01</span>
-          <h3>スマートFIREタイプ診断</h3>
+          <h3>会社員の副業・お金タイプ診断</h3>
           <p class="benefit">8つの質問で、<b>今のあなたが最初に見直すポイント</b>がわかります。全65,536通りの中から、あなた向けのレポートをその場で読めます。</p>
         </div>
         <div class="inside"><ul>
