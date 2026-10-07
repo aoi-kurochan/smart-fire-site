@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>スマートFIRE 特典セット</title>
 <meta name="description" content="会社に頼らない生き方に興味がある方へ、スマートFIREの特典をお渡しするページです。">
 <meta property="og:type" content="website">
@@ -13,236 +14,407 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://bonus.aoi-kurokawa.com/ogp.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f8f3;
-  --card:#ffffff;
-  --ink:#37403a;
-  --ink-soft:#6a736c;
-  --ink-faint:#98a09a;
-  --green:#2e7d55;        /* アクセント（深緑） */
-  --green-d:#276a49;      /* hover */
-  --green-soft:#8fb98c;
-  --gold:#a8842c;         /* 特典② */
-  --leaf-green:#5c8a5a;   /* 特典① */
-  --blue:#3f6aa0;         /* 特典③ */
-  --line:#e6e9e2;
-  --shadow:0 6px 24px rgba(46,125,85,.08);
+  --ink:#203b43;
+  --ink-soft:#4f6469;
+  --ink-faint:#86959a;
+  --paper:#faf9f5;
+  --white:#ffffff;
+  --mint:#e0ede5;
+  --peach:#fbeee4;
+  --red:#dc4d36;
+  --rule:#d6dcd8;
+  --band:#203b43;
+  --band-ink:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ink:#e4ece9;
+    --ink-soft:#b3c1bd;
+    --ink-faint:#83928e;
+    --paper:#131a1c;
+    --white:#1a2326;
+    --mint:#1f2f2b;
+    --peach:#2c2420;
+    --red:#e8664f;
+    --rule:#2f3c3e;
+    --band:#0d1416;
+    --band-ink:#e4ece9;
+  }
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;}
-body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--ink);
-  line-height:1.9;font-size:16px;letter-spacing:.01em;overflow-x:hidden;}
+body{font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  background:var(--white);color:var(--ink);font-size:17px;line-height:2;overflow-x:hidden;}
+a{color:inherit;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+.narrow{max-width:820px;margin:0 auto;padding:0 24px;}
 
-.wrap{max-width:760px;margin:0 auto;padding:0 22px;}
-section{padding:52px 0;}
+/* ヘッダー */
+.site-head{padding:22px 0 18px;}
+.site-head .wrap{display:flex;align-items:center;gap:18px;}
+.logo{white-space:nowrap;font-size:28px;font-weight:800;letter-spacing:.06em;position:relative;padding-right:12px;line-height:1;}
+.logo::after{content:"";position:absolute;right:0;top:2px;width:7px;height:7px;border-radius:50%;background:var(--red);}
+.logo-sub{margin-left:.35em;}
+.tagline{font-size:11px;line-height:1.6;color:var(--ink-soft);}
+.greet{border-top:1px solid var(--rule);}
+.greet .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  font-size:11px;color:var(--ink-soft);padding-top:9px;padding-bottom:9px;}
+.date{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:12px;}
 
-/* eyebrow */
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;color:var(--green);}
-.eyebrow-jp{font-size:13px;color:var(--ink-soft);margin-top:6px;}
-
-/* 見出し */
-h2.sec{font-size:23px;font-weight:700;color:var(--ink);line-height:1.55;
-  padding-bottom:12px;margin-bottom:26px;position:relative;text-wrap:balance;}
-h2.sec::after{content:"";position:absolute;left:0;bottom:0;width:52px;height:3px;
-  background:var(--green);border-radius:2px;}
-
-p{margin-bottom:14px;}
-p:last-child{margin-bottom:0;}
+/* 小見出しラベル */
+.kicker{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink);margin-bottom:10px;}
+h2{font-size:clamp(23px,5.4vw,30px);font-weight:800;line-height:1.6;letter-spacing:.03em;}
+.sec{padding:96px 0 0;}
+.sec-head{border-top:2px solid var(--ink);padding-top:22px;margin-bottom:40px;}
 .soft{color:var(--ink-soft);}
-.small{font-size:13.5px;color:var(--ink-soft);line-height:1.85;}
+.small{font-size:13px;color:var(--ink-faint);line-height:1.9;}
 
-/* ===== CTAボタン ===== */
-.cta{display:inline-flex;align-items:center;justify-content:center;gap:.5em;
-  background:var(--green);color:#fff;font-weight:700;font-size:17px;
-  text-decoration:none;padding:18px 34px;border-radius:44px;
-  box-shadow:0 8px 20px rgba(46,125,85,.28);transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
-  text-wrap:balance;text-align:center;}
-.cta:hover{background:var(--green-d);transform:translateY(-2px);box-shadow:0 12px 26px rgba(46,125,85,.34);}
-.cta .arw{font-weight:400;}
-.cta-note{margin-top:12px;}
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  background:var(--ink);color:var(--white);text-decoration:none;font-weight:700;font-size:15px;
+  letter-spacing:.06em;padding:17px 34px;border-radius:999px;transition:opacity .2s;}
+.btn:hover{opacity:.85;}
+.btn .arw{font-weight:400;}
+.btn.light{background:var(--band-ink);color:var(--band);}
+@media (prefers-color-scheme:dark){.btn{color:#131a1c;}}
 
-/* 控えめな第2CTA（共感ボックス直後） */
-.sub-cta-wrap{text-align:center;margin-top:24px;}
-.cta.cta-soft{background:#fff;color:var(--green);border:1.5px solid var(--green-soft);
-  box-shadow:0 4px 14px rgba(46,125,85,.10);font-size:15px;padding:14px 28px;}
-.cta.cta-soft:hover{background:#f0f6f1;border-color:var(--green);
-  box-shadow:0 8px 18px rgba(46,125,85,.16);}
+/* ファーストビュー */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:440px;}
+.hero-text{background:var(--mint);padding:56px 48px;display:flex;flex-direction:column;justify-content:center;}
+.hero h1{font-size:clamp(28px,4.2vw,42px);font-weight:800;line-height:1.65;letter-spacing:.03em;margin-bottom:22px;}
+.hero p.lead{font-size:16.5px;line-height:2.05;margin-bottom:32px;}
+.hero .small{margin-top:14px;}
+.hero-visual{background:var(--peach);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:40px 24px;}
 
-/* スマホ用 下部追従CTA（デスクトップ非表示・最上部では出さない） */
-.sticky-cta{position:fixed;left:50%;bottom:14px;z-index:50;
-  display:none;align-items:center;justify-content:center;gap:.4em;
-  background:rgba(255,255,255,.96);color:var(--green);
-  border:1.5px solid var(--green-soft);border-radius:40px;
-  font-weight:700;font-size:14px;text-decoration:none;padding:11px 22px;
-  box-shadow:0 6px 20px rgba(46,125,85,.16);white-space:nowrap;
-  opacity:0;pointer-events:none;
-  transform:translateX(-50%) translateY(12px);
-  transition:opacity .4s ease,transform .4s ease;}
-.sticky-cta .arw{font-weight:400;}
-.sticky-cta.show{opacity:1;pointer-events:auto;
-  transform:translateX(-50%) translateY(0);}
+/* 冊子の束（CSSだけで描く） */
+.booklets{position:relative;width:430px;height:530px;}
+.bk{position:absolute;left:0;width:380px;height:290px;background:var(--paper);border:1px solid var(--rule);
+  border-radius:4px;padding:18px 24px;box-shadow:0 2px 0 rgba(32,59,67,.05);}
+.bk .row{display:flex;align-items:baseline;gap:14px;}
+.bk .row .t{font-size:17px;line-height:1.55;white-space:normal;}
+.bk .n{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:16px;color:var(--red);letter-spacing:.1em;}
+.bk .t{font-weight:800;font-size:17px;line-height:1.5;}
+.bk.b4{top:0;left:46px;transform:rotate(3deg);}
+.bk.b3{top:84px;left:30px;transform:rotate(-1.5deg);}
+.bk.b2{top:168px;left:14px;transform:rotate(1.5deg);}
+.bk.b1{top:252px;left:0;transform:rotate(-2deg);background:var(--white);height:262px;padding:26px 28px;}
+.bk.b1 .t{font-size:24px;}
+.bk.b1 .lead{font-size:15px;color:var(--ink-soft);margin-top:14px;line-height:1.9;}
+.bk.b1 .tag{position:absolute;right:24px;top:28px;font-size:13px;}
+.hero-visual{isolation:isolate;}
+.hero-visual>.booklets{position:relative;z-index:2;}
+.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.35;filter:saturate(.45);
+  -webkit-mask-image:linear-gradient(to left,#000 30%,transparent 95%);mask-image:linear-gradient(to left,#000 30%,transparent 95%);}
+@media (prefers-color-scheme:dark){.hero-photo{opacity:.12;}}
 
-/* ===== ファーストビュー ===== */
-.hero{position:relative;padding:64px 0 54px;text-align:center;overflow:hidden;}
-.hero .wrap{position:relative;z-index:1;}
-.hero .eyebrow-jp{margin-bottom:22px;}
-.hero h1{font-weight:700;color:var(--ink);letter-spacing:.02em;
-  font-size:clamp(30px,7.4vw,46px);line-height:1.4;text-wrap:balance;margin-bottom:22px;}
-.hero h1 .l1{color:var(--green);}
-.hero .lead{font-size:clamp(16px,4.2vw,19px);font-weight:500;max-width:600px;margin:0 auto 12px;text-wrap:balance;}
-.hero .sub{font-size:15px;color:var(--ink-soft);max-width:560px;margin:0 auto 14px;text-wrap:balance;}
-.hero .chips{font-size:12.5px;color:var(--ink-faint);letter-spacing:.03em;
-  max-width:560px;margin:0 auto 26px;text-wrap:balance;}
-.hero .chips .sep{color:var(--green-soft);margin:0 .55em;}
-.hero .cta-note .small{margin:0;}
-.leaf{position:absolute;opacity:.5;pointer-events:none;z-index:0;}
-.leaf.a{top:-28px;right:-26px;width:150px;height:150px;transform:rotate(24deg);}
-.leaf.b{bottom:-40px;left:-34px;width:130px;height:130px;transform:rotate(205deg);}
+/* 書いている人 */
+.about{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start;}
+.name{font-size:22px;font-weight:800;letter-spacing:.05em;}
+.name span{font-size:12px;font-weight:400;color:var(--ink-faint);margin-left:10px;}
+.about p{margin-top:16px;font-size:16px;}
+.stats{display:grid;border-top:1px solid var(--rule);}
+.stat{padding:26px 0 24px;border-bottom:1px solid var(--rule);}
+.stat .v{font-size:76px;font-weight:800;letter-spacing:.01em;line-height:1.1;}
+.stat .v small{font-size:22px;font-weight:800;margin-left:4px;}
+.stat .v .pre{font-size:22px;font-weight:800;margin-right:4px;}
+.stat .k{font-size:15px;color:var(--ink-soft);line-height:1.8;margin-top:8px;}
+.stat .k b{color:var(--ink);font-weight:800;}
+.disclaimer{margin-top:14px;}
 
-/* ===== 読者への一言 ===== */
-.note-block{background:var(--card);border-radius:16px;box-shadow:var(--shadow);
-  padding:30px 30px;border-left:4px solid var(--green-soft);}
-.note-block p{margin-bottom:10px;}
-.note-block p:last-child{margin-bottom:0;}
-.note-block .strong{color:var(--ink);font-weight:500;}
+/* 特典カード */
+.cards{display:grid;gap:22px;}
+.card{border:1px solid var(--rule);border-radius:6px;padding:34px 36px;background:var(--white);
+  display:grid;grid-template-columns:1fr 1fr;gap:12px 40px;}
+.tag{display:inline-block;background:var(--mint);font-size:12px;font-weight:700;padding:2px 10px;border-radius:2px;letter-spacing:.04em;}
+.card .no{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;color:var(--red);font-size:15px;letter-spacing:.1em;margin-left:10px;}
+.card h3{font-size:21px;font-weight:800;line-height:1.6;margin:14px 0 12px;}
+.card .benefit{font-size:15.5px;line-height:1.95;}
+.card .benefit b{font-weight:800;background:linear-gradient(transparent 62%,var(--mint) 62%);}
+.cap-note{display:block;font-size:13px;color:var(--ink-faint);margin-top:8px;line-height:1.8;}
+.inside{border-left:1px solid var(--rule);padding-left:32px;}
+.inside .lbl{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--ink-faint);margin-bottom:8px;}
+.inside ul{list-style:none;margin-top:-4px;}
+.inside li{position:relative;padding:7px 0 7px 18px;font-size:14.5px;line-height:1.75;border-bottom:1px dashed var(--rule);}
+.inside li:last-child{border-bottom:none;}
+.inside li::before{content:"";position:absolute;left:0;top:17px;width:6px;height:6px;border-radius:50%;background:var(--red);}
+.cta-row{margin-top:44px;text-align:center;}
+.cta-row .small{margin-top:12px;}
 
-/* ===== 特典カード ===== */
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:34px;}
-.card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);
-  padding:26px 24px 24px;border-top:4px solid var(--c,var(--green));position:relative;}
-.card .badge{display:inline-flex;align-items:center;justify-content:center;
-  width:34px;height:34px;border-radius:50%;background:var(--c,var(--green));color:#fff;
-  font-weight:700;font-size:14px;vertical-align:middle;}
-.card .label{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--c,var(--green));
-  margin-left:10px;vertical-align:middle;}
-.card .cap{display:block;margin-bottom:14px;}
-.card h3{font-size:17px;font-weight:700;line-height:1.55;margin-bottom:10px;color:var(--ink);}
-.card p{font-size:14px;color:var(--ink-soft);line-height:1.85;margin:0;}
-.card.c01{--c:var(--green);}
-.card.c02{--c:var(--gold);}
-.card.c03{--c:var(--leaf-green);}
-.card.c04{--c:var(--blue);}
+/* 先出し（ピーチの面） */
+.peach-box{background:var(--peach);padding:56px 56px 52px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;}
+.peach-box h3{font-size:22px;font-weight:800;line-height:1.65;margin-bottom:14px;}
+.peach-box p{font-size:13.5px;}
+.checks{list-style:none;background:var(--white);border-radius:4px;padding:8px 26px;}
+.checks li{position:relative;padding:16px 0 16px 32px;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.8;}
+.checks li:last-child{border-bottom:none;}
+.checks li::before{content:"";position:absolute;left:0;top:20px;width:15px;height:15px;border:1.5px solid var(--ink);border-radius:2px;}
+.checks .sub{display:block;font-size:12px;color:var(--ink-faint);}
+.peach-box .after{margin-top:18px;font-size:13px;}
 
-/* ===== 最終CTA ===== */
-.final{text-align:center;}
-.final .safe{margin-top:26px;text-align:left;max-width:600px;margin-left:auto;margin-right:auto;}
-.final .safe p{margin-bottom:8px;}
+/* 発信先 */
+.links{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.link{display:block;border:1px solid var(--rule);border-radius:4px;padding:22px 22px 20px;text-decoration:none;transition:border-color .2s;}
+.link:hover{border-color:var(--ink);}
+.link .t{font-weight:800;font-size:16px;}
+.link .d{font-size:12.5px;color:var(--ink-soft);margin-top:6px;line-height:1.8;}
+.link .go{font-size:12px;margin-top:14px;display:block;}
 
-/* ===== フッター ===== */
-footer{text-align:center;padding:34px 22px 46px;color:var(--ink-faint);font-size:13px;
-  border-top:1px solid var(--line);margin-top:10px;}
+/* 締めの帯 */
+.band{background:var(--band);color:var(--band-ink);margin-top:110px;padding:72px 0;}
+.band .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;}
+.band .kicker{color:var(--band-ink);font-weight:400;}
+.band h2{color:var(--band-ink);}
+.band .note{font-size:12px;opacity:.75;margin-top:10px;line-height:1.9;}
+.changes{list-style:none;margin-top:22px;}
+.changes li{position:relative;padding:6px 0 6px 26px;font-size:16px;font-weight:700;line-height:1.8;}
+.changes li::before{content:"";position:absolute;left:0;top:15px;width:14px;height:8px;border-left:2px solid var(--red);border-bottom:2px solid var(--red);transform:rotate(-45deg);}
+.band .side{text-align:center;}
+.band .side .small{color:var(--band-ink);opacity:.7;margin-top:12px;}
 
-/* ===== レスポンシブ ===== */
-@media (max-width:640px){
-  section{padding:42px 0;}
-  .cards{grid-template-columns:1fr;gap:14px;}
-  .cta{width:100%;padding:18px 20px;font-size:16px;}
-  .note-block{padding:22px 20px;}
-  h2.sec{font-size:20px;}
-  .hero{padding:48px 0 44px;}
-  .sticky-cta{display:inline-flex;}
+footer{padding:36px 0 120px;}
+footer .wrap{display:flex;gap:24px;align-items:center;}
+footer .logo{font-size:20px;}
+footer .fine{font-size:12px;color:var(--ink-faint);line-height:1.8;}
+
+/* スマホ下部の追従ボタン */
+.sticky{position:fixed;left:16px;right:16px;bottom:14px;z-index:20;display:none;justify-content:center;
+  background:var(--ink);color:var(--white);text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.06em;
+  padding:14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .35s;}
+@media (prefers-color-scheme:dark){.sticky{color:#131a1c;}}
+.sticky.show{opacity:1;pointer-events:auto;}
+
+
+@media (max-width:1024px){.hero-text p.lead br{display:none;}}
+@media (max-width:760px){
+  .site-head .logo{font-size:21px;}
+  .hero-text{padding:36px 24px 36px;}
+  .hero h1{margin-bottom:16px;}
+  .hero p.lead{margin-bottom:24px;}
+  body{font-size:15.5px;}
+  .hero p.lead{font-size:15px;}
+  .about p{font-size:15px;}
+  .logo-sub{margin-left:.35em;}
+.tagline{display:none;}
+  .hero{grid-template-columns:1fr;min-height:0;}
+  .hero-text{padding:44px 24px 40px;}
+  .hero-visual{padding:24px 16px;}
+  .hero-visual{justify-content:flex-start;}
+  .booklets{transform:scale(.78);transform-origin:left top;height:420px;margin:0 0 -6px calc(50% - 168px);flex-shrink:0;}
+  .btn{width:100%;}
+  .about{grid-template-columns:1fr;gap:28px;}
+  .stat .v{font-size:58px;}
+  .cards{gap:16px;}
+  .card{grid-template-columns:1fr;padding:26px 22px;}
+  .card h3{font-size:19px;}
+  .cap-note{display:block;font-size:13px;color:var(--ink-faint);margin-top:8px;line-height:1.8;}
+.inside{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:14px;margin-top:6px;}
+  .peach-box{grid-template-columns:1fr;padding:40px 22px;gap:24px;}
+  .links{grid-template-columns:1fr;gap:12px;}
+  .sec{padding-top:72px;}
+  .band{margin-top:80px;padding:56px 0;}
+  .band .wrap{flex-direction:column;align-items:stretch;}
+  .sticky{display:flex;}
 }
 </style>
 </head>
 <body>
 
-<!-- セクション1：ファーストビュー -->
-<header class="hero">
-  <svg class="leaf a" viewBox="0 0 100 100" aria-hidden="true"><path fill="#d7e6d3" d="M50 8 C30 24 24 52 40 78 C42 55 47 34 62 18 C56 32 52 52 52 78 C70 54 70 26 50 8Z"/></svg>
-  <svg class="leaf b" viewBox="0 0 100 100" aria-hidden="true"><path fill="#e0ecdc" d="M50 8 C30 24 24 52 40 78 C42 55 47 34 62 18 C56 32 52 52 52 78 C70 54 70 26 50 8Z"/></svg>
+
+<header class="site-head">
   <div class="wrap">
-    <div class="eyebrow">SMART FIRE</div>
-    <div class="eyebrow-jp">会社に頼らない生き方に興味がある方へ</div>
-    <h1><span class="l1">スマートFIRE</span> 特典セット</h1>
-    <p class="lead">会社を辞めずに、会社に縛られない人生を作る。そのための特典を、4つご用意しました。</p>
-    <p class="sub">10秒の登録で、スマートFIREタイプ診断をすぐに確認できます。そのあとは、3つの特典も順番に届きます。</p>
-    <p class="chips">タイプ診断<span class="sep">／</span>副業リスク点検<span class="sep">／</span>元手づくり<span class="sep">／</span>お金の仕組み</p>
-    <a id="cta-hero" class="cta" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で特典を受け取る <span class="arw">→</span></a>
-    <div class="cta-note">
-      <p class="small">登録は無料です。<br>不要になれば、いつでも解除できます。</p>
-    </div>
+    <div class="logo">あおいの<span class="logo-sub">スマートFIRE</span></div>
   </div>
 </header>
 
-<!-- セクション2：読者への一言 -->
-<section>
-  <div class="wrap">
-    <div class="note-block">
-      <p class="strong">会社を辞めたい。でも、いきなり辞めるのは怖い。</p>
-      <p>その気持ちは、無理に否定しなくて大丈夫です。</p>
-      <p>大切なのは、勢いで辞めることではなく、会社にいる間に、選択肢を少しずつ育てていくこと。</p>
-      <p>このページの特典は、その最初の一歩を軽くするために作りました。</p>
+<!-- 1. ファーストビュー -->
+<section class="wrap" style="padding-top:0;padding-left:0;padding-right:0;max-width:1040px;">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="kicker">スマートFIRE 特典セット</p>
+      <h1>会社を辞めずに、<br>会社に縛られない<br>人生を。</h1>
+      <p class="lead">会社に頼らない生き方に興味がある方へ、<br>そのための特典を4つ用意しました。<br>登録すると、まずタイプ診断をすぐに受けられます。</p>
+      <div>
+        <a class="btn" data-track="cta-hero" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で特典を受け取る <span class="arw">→</span></a>
+        <p class="small">登録は無料です。<br>不要になれば、いつでも解除できます。</p>
+      </div>
     </div>
-    <div class="sub-cta-wrap">
-      <a id="cta-mid" class="cta cta-soft" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">まずは、無料で受け取ってみる <span class="arw">→</span></a>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-photo" style="background-image:url(hero-desk.jpg)"></div>
+      <div class="booklets">
+        <div class="bk b4"><div class="row"><span class="n">04</span><span class="t">毎日お金が増える仕組みの正体</span></div></div>
+        <div class="bk b3"><div class="row"><span class="n">03</span><span class="t">0から10万円を作る、<br>最初の元手づくりガイド</span></div></div>
+        <div class="bk b2"><div class="row"><span class="n">02</span><span class="t">人事を10年やってわかった、<br>会社員の副業リスク点検シート</span></div></div>
+        <div class="bk b1"><span class="tag">登録後すぐ</span><div class="row"><span class="n">01</span></div><div class="t" style="margin-top:6px">スマートFIRE<br>タイプ診断</div><p class="lead">8つの質問に答えると、<br>あなた向けのレポートが読めます。</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- セクション3：特典カード -->
-<section>
-  <div class="wrap">
-    <h2 class="sec">10秒の登録で受け取れる、4つの特典</h2>
+<!-- 2. 書いている人 -->
+<section class="sec">
+  <div class="narrow">
+    <div class="sec-head">
+      <p class="kicker">ABOUT</p>
+      <h2>私は、こんな人です</h2>
+    </div>
+    <div class="about">
+      <div>
+        <p class="name">あおい<span>黒川葵</span></p>
+        <p>会社員として働きながら、AIやKindle出版を活用し、自分で選べる選択肢を少しずつ増やしています。</p>
+        <p>成功だけでなく、実際に試したこと、迷ったこと、失敗から分かったことも共有します。</p>
+      </div>
+      <div>
+        <div class="stats">
+          <div class="stat"><div class="v"><span class="pre">月</span>7<small>桁</small></div><p class="k">会社員のまま、<b>副業収入が月7桁を達成しました。</b></p></div>
+          <div class="stat"><div class="v">500<small>万円超</small></div><p class="k">Kindle印税の累計（出版を始めてから1年半）</p></div>
+          <div class="stat"><div class="v">30<small>冊以上</small></div><p class="k">これまでに出版したKindle本</p></div>
+        </div>
+        <p class="small disclaimer">ここに書いた数字は、あおい個人の実績です。同じ成果をお約束するものではありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 特典 -->
+<section class="sec">
+  <div class="narrow">
+    <div class="sec-head">
+      <p class="kicker">GIFT</p>
+      <h2>10秒の登録で受け取れる、<br>4つの特典</h2>
+    </div>
     <div class="cards">
-      <div class="card c01">
-        <span class="cap"><span class="badge">01</span><span class="label">DIAGNOSIS</span></span>
-        <h3>スマートFIREタイプ診断</h3>
-        <p>8つの質問に答えるだけで、副業、お金、会社との付き合い方のうち、今のあなたが最初に見直すポイントがわかります。</p>
+      <div class="card">
+        <div>
+          <span class="tag">登録後すぐ</span><span class="no">01</span>
+          <h3>スマートFIREタイプ診断</h3>
+          <p class="benefit">8つの質問で、<b>今のあなたが最初に見直すポイント</b>がわかります。全65,536通りの中から、あなた向けのレポートをその場で読めます。</p>
+        </div>
+        <div class="inside"><ul>
+          <li>副業・お金・会社との付き合い方のうち、最初に見直すポイント</li>
+          <li>8つの回答から、自分の考えを整理できる自己理解レポート</li>
+          <li>結果はコピーして、手元に残せます</li>
+        </ul></div>
       </div>
-      <div class="card c02">
-        <span class="cap"><span class="badge">02</span><span class="label">CHECK</span></span>
-        <h3>人事を10年やってわかった、会社員の副業リスク点検シート</h3>
-        <p>「会社に知られたらどうしよう」という不安を、見つける側にいた人事の視点で、10個の点検項目に整理しました。</p>
+      <div class="card">
+        <div>
+          <span class="tag">点検シート</span><span class="no">02</span>
+          <h3>人事を10年やってわかった、会社員の副業リスク点検シート</h3>
+          <p class="benefit">副業を見つける側にいた人事の結論です。<b>3つを整えれば、副業が問題になるリスクの大部分は消せます。</b></p>
+        </div>
+        <div class="inside"><ul>
+          <li>副業は、実際は何でバレるのか</li>
+          <li>「住民税でバレる」は、思っているより起きない</li>
+          <li>バレたら実際どうなるのか。聞き取りの部屋で起きること</li>
+          <li>会社に申請する前に、確認しておくこと</li>
+          <li>10項目の副業リスク点検シート</li>
+        </ul></div>
       </div>
-      <div class="card c03">
-        <span class="cap"><span class="badge">03</span><span class="label">METHOD</span></span>
-        <h3>0から10万円を作る、最初の元手づくりガイド</h3>
-        <p>会社員のまま、最初の元手を作るために知っておきたい方法と注意点をまとめました。</p>
+      <div class="card">
+        <div>
+          <span class="tag">ガイド</span><span class="no">03</span>
+          <h3>0から10万円を作る、最初の元手づくりガイド</h3>
+          <p class="benefit"><b>手持ちのお金を使わずに、最初の元手を作る方法</b>です。私はこの方法で、<b>約2週間で20万円</b>を作りました。<span class="cap-note">条件に恵まれた結果です。目安は10万円前後です。</span></p>
+        </div>
+        <div class="inside"><ul>
+          <li>元手づくりに使える方法と、その仕組み</li>
+          <li>最初に選ぶとよいものと、先に知っておきたい注意点</li>
+          <li>大きく作りたい人が、選ぶときの考え方</li>
+          <li>今日からできる、実行の5ステップ</li>
+        </ul></div>
       </div>
-      <div class="card c04">
-        <span class="cap"><span class="badge">04</span><span class="label">MONEY</span></span>
-        <h3>毎日お金が増える仕組みの正体</h3>
-        <p>毎日お金が増える仕組みと、始める前に知っておきたい落とし穴をまとめました。</p>
+      <div class="card">
+        <div>
+          <span class="tag">読みもの</span><span class="no">04</span>
+          <h3>毎日お金が増える仕組みの正体</h3>
+          <p class="benefit">「毎日お金が増える」仕組みの正体と、その落とし穴。<b>始めるかどうかを、自分で判断できるようになります。</b>私は、<b>600万円の元手を1年半で約900万円</b>に増やしました。<span class="cap-note">同じ結果をお約束するものではありません。</span></p>
+        </div>
+        <div class="inside"><ul>
+          <li>「毎日お金が増える」は、どこから来るのか</li>
+          <li>始める前に知っておきたい、落とし穴3つ</li>
+          <li>あおいの実例と、自分で決めている守りのルール</li>
+          <li>始める前の点検シート</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="cta-row">
+      <a class="btn" data-track="cta-mid" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で特典を受け取る <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 点検シートの先出し -->
+<section class="sec">
+  <div class="narrow">
+    <div class="peach-box">
+      <div>
+        <p class="kicker">先に、少しだけ</p>
+        <h3>副業リスク点検シートから、3つの項目</h3>
+        <p class="soft">特典02の10項目のうち、3つをここに置いておきます。あてはまるか、確かめてみてください。</p>
+      </div>
+      <div>
+        <ul class="checks">
+          <li>就業規則の副業に関する条文を、自分の目で読んだ<span class="sub">禁止か、許可制か、届出制かを把握している</span></li>
+          <li>会社の機密情報や、社内で知り得た情報を一切使っていない</li>
+          <li>会社のパソコン、スマホ、アカウントを使っていない</li>
+        </ul>
+        <p class="after">チェックがつかなかった項目が、今日整えるべき場所です。残りの7項目と、それぞれの理由は、特典でお渡しします。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 最終CTAと安心文言 -->
-<section class="final">
+<!-- 5. ほかの発信 -->
+<section class="sec">
+  <div class="narrow">
+    <div class="sec-head">
+      <p class="kicker">READ MORE</p>
+      <h2>他にも、<br>無料で学べる場所があります</h2>
+    </div>
+    <div class="links">
+      <a class="link" data-track="link-bookshelf" href="https://books.aoi-kurokawa.com/"><span class="t">あおいの本棚</span><span class="d" style="display:block">30冊以上の本から、今のあなたに合う1冊を選べます。すべてKindle Unlimitedの対象なので、会員なら追加料金なしで読めます。</span><span class="go">本棚を見る ↗</span></a>
+      <a class="link" data-track="link-note" href="https://note.com/kurokawa_aoi"><span class="t">note</span><span class="d" style="display:block">Kindle出版やAIの活用で、実際に試した手順と結果を、じっくり読めます。</span><span class="go">noteを読む ↗</span></a>
+      <a class="link" data-track="link-x" href="https://x.com/aoi_kurochan"><span class="t">X</span><span class="d" style="display:block">その日に試したことや気づきを、短く届けています。いまの動きを追いたい方に。</span><span class="go">Xを見る ↗</span></a>
+      <a class="link" data-track="link-youtube" href="https://www.youtube.com/channel/UCqzp3SPlg7a4MgVbpHE-VqQ"><span class="t">YouTube</span><span class="d" style="display:block">本の概要だけでなく、最新のAI活用法も紹介しています。通勤中や家事の合間にも学べます。</span><span class="go">YouTubeを見る ↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 締めの帯 -->
+<section class="band">
   <div class="wrap">
-    <a id="cta-bottom" class="cta" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で特典を受け取る <span class="arw">→</span></a>
-    <div class="safe">
-      <p class="small">登録は無料です。登録後、診断と3つの資料を順番にお届けします。</p>
-      <p class="small">入力いただいた情報は、スマートFIREに関する情報提供のために使用します。</p>
-      <p class="small">不要になった場合は、いつでも配信停止できます。</p>
-      <p class="small">特典が届かない場合は、迷惑メールフォルダやプロモーションフォルダもご確認ください。</p>
+    <div>
+      <p class="kicker">受け取ったあとに</p>
+      <h2>読み終えるころには、<br>次の一歩が決まっています。</h2>
+      <ul class="changes">
+        <li>自分が最初に見直すポイントが、はっきりする</li>
+        <li>会社に知られる不安を整えて、副業を始められる</li>
+        <li>今日から、最初の元手づくりに動き出せる</li>
+        <li>お金を増やす話を、自分で判断できるようになる</li>
+      </ul>
+    </div>
+    <div class="side">
+      <a class="btn light" data-track="cta-bottom" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で特典を受け取る <span class="arw">→</span></a>
+      <p class="small">登録は無料です。届かない場合は、<br>迷惑メールフォルダもご確認ください。</p>
     </div>
   </div>
 </section>
 
-<footer>© あおいの Smart FIRE 日記</footer>
+<footer>
+  <div class="wrap">
+    <div class="logo">あおいの<span class="logo-sub">スマートFIRE</span></div>
+  </div>
+</footer>
 
-<a id="sticky-cta" class="sticky-cta" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">無料で特典を受け取る <span class="arw">→</span></a>
+<a id="sticky" class="sticky" data-track="cta-sticky" href="https://aoi-kurochan.com/p/r/qe5gU7Iv">10秒で特典を受け取る →</a>
+
 <script>
 (function(){
-  var el=document.getElementById('sticky-cta');
-  if(!el)return;
-  var hero=document.querySelector('.hero');
-  function onScroll(){
-    var threshold=hero?hero.offsetHeight-40:320;
-    if(window.scrollY>threshold){el.classList.add('show');}
-    else{el.classList.remove('show');}
-  }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll,{passive:true});
-  onScroll();
+  var s=document.getElementById('sticky'),h=document.querySelector('.hero');
+  function f(){ if(!s)return; var r=h?h.getBoundingClientRect().bottom:0; s.classList.toggle('show', r<0); }
+  window.addEventListener('scroll',f,{passive:true}); f();
 })();
 </script>
-
 </body>
 </html>
